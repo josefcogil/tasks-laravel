@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
     public function index () {
-        return view('home');
+        $tasks = DB::table('tasks')->get();
+        return view('home', ['tasks' => $tasks]);
     }
     
     public function getAll() {

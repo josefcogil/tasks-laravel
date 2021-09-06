@@ -31,8 +31,6 @@
     </head>
     <body>
     <div class="container">
-        <h1 class="text-center">Main Layout</h1>
-
         @yield('content')
     </div>
 
