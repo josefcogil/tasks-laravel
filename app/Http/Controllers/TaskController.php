@@ -17,6 +17,8 @@ class TaskController extends Controller
     }
 
     public function getOne($id) {
-        return 'Task '.$id;
+        $task = DB::table('tasks')->find($id);
+        
+        return 'id: '.$task->id.', title: '.$task->title.', description: '.$task->description;
     }
 }
